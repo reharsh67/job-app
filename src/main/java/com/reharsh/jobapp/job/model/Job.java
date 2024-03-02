@@ -1,7 +1,12 @@
 package com.reharsh.jobapp.job.model;
 
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "tbl_job_dtl")
 public class Job {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String title;
     private String description;
@@ -16,6 +21,10 @@ public class Job {
         this.minSalary = minSalary;
         this.maxSalary = maxSalary;
         this.location = location;
+    }
+
+    public Job() {
+
     }
 
     public long getId() {
